@@ -13,8 +13,8 @@ def index():
 def name(name = "World"):
     return render_template("name.html",name=name)
 
-@app.route("/products")
-def cat():
-    respons = requests.get("https://fakestoreapi.com/products")
-    products = respons.json()
-    return render_template("products")
+@app.route("/dog")
+def dog():
+    respons = requests.get("https://random.dog/woof.json")
+    url = respons.json()
+    return render_template("dog.html", image=url['url'])
